@@ -6,7 +6,6 @@ import (
 	"text/template"
 )
 
-
 func main() {
 	tpl, err := template.ParseGlob("templates/*")
 	if err != nil {

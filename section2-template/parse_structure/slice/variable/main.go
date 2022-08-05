@@ -1,9 +1,9 @@
 package main
 
 import (
+	"html/template"
 	"log"
 	"os"
-	"text/template"
 )
 
 var tpl *template.Template
@@ -13,7 +13,11 @@ func init() {
 }
 
 func main() {
-	err := tpl.ExecuteTemplate(os.Stdout, "tpl.gohtml", `Release self-focus; embrace other-focus.`)
+
+	sages := []string{"Gandhi", "MLK", "Buddha", "Jesus", "Muhammad"}
+
+	err := tpl.Execute(os.Stdout, sages)
+
 	if err != nil {
 		log.Fatalln(err)
 	}
